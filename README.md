@@ -1,6 +1,6 @@
 # Personal Website
 
-Rocky Yu's one-page portfolio, hosted on GitHub Pages at https://rockyyu000-commits-goo.github.io.
+Personal site hosted on GitHub Pages at https://rockyyu000-commits-goo.github.io.
 
 ## Files
 
