@@ -5,69 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rocky Yu</title>
 <meta name="description" content="Rocky Yu, Engineering I student at McMaster University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 /* Colors live here. Change these to restyle the whole site. */
 :root {
-  --bg: #ffffff;
+  --bg: #fafafa;
   --text: #1a1a1a;
-  --muted: #666666;
-  --rule: #e5e5e5;
-  --link: #1a56db;
+  --muted: #7a7a7a;
+  --rule: #e2e2e2;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #111111;
-    --text: #e8e8e8;
-    --muted: #9a9a9a;
-    --rule: #2a2a2a;
-    --link: #7aa7ff;
+    --bg: #101010;
+    --text: #e6e6e6;
+    --muted: #8a8a8a;
+    --rule: #262626;
   }
 }
 
 * { box-sizing: border-box; }
-html { scroll-padding-top: 16px; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 300 15px/1.65 "Inter", system-ui, sans-serif;
 }
-main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+main { max-width: 900px; margin: 0 auto; padding: 72px 24px 64px; }
 
-a { color: var(--link); text-underline-offset: 2px; }
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+a { color: inherit; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--text); }
+a:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
 
-header h1 { margin: 0; font-size: 2rem; font-weight: 600; line-height: 1.2; }
-header p { margin: 8px 0 0; color: var(--muted); }
+header h1 { margin: 0; font-size: 2.75rem; font-weight: 200; letter-spacing: -0.02em; line-height: 1.1; }
+header p { margin: 10px 0 0; color: var(--muted); }
 
-nav { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 20px; }
-nav a { color: var(--text); }
+nav { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 24px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--text); }
 
-section { margin-top: 48px; }
-h2 {
-  margin: 0 0 12px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--rule);
-  font-size: 1.125rem;
-  font-weight: 600;
+/* Each section: heading in a left column, content on the right. */
+section {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: 32px;
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
 }
+section > :not(h2) { grid-column: 2; }
+h2 { margin: 0; font-size: 1.125rem; font-weight: 200; letter-spacing: -0.01em; }
 p { margin: 0 0 12px; }
+section > p:last-child { margin-bottom: 0; }
 
-/* A list entry: title on the left, date on the right, detail underneath. */
+/* A list entry: title and date on one line, detail underneath. */
 .entries { list-style: none; margin: 0; padding: 0; }
-.entries li { padding: 12px 0; border-bottom: 1px solid var(--rule); }
-.entries li:last-child { border-bottom: 0; }
+.entries li { padding: 0 0 18px; }
+.entries li:last-child { padding-bottom: 0; }
 .top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
-.title { font-weight: 600; }
+.title { font-weight: 400; }
 .date { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .sub { color: var(--muted); }
-.entries p { margin: 4px 0 0; }
+.entries p { margin: 2px 0 0; color: var(--muted); }
 
 .links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
 
-footer { margin-top: 64px; color: var(--muted); font-size: 0.875rem; }
+footer { margin-top: 72px; color: var(--muted); font-size: 0.8125rem; }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  main { padding: 48px 16px; }
+  header h1 { font-size: 2.25rem; }
+  section { grid-template-columns: 1fr; row-gap: 14px; margin-top: 40px; }
+  section > :not(h2) { grid-column: 1; }
+}
+@media (max-width: 420px) {
   .top { flex-direction: column; gap: 0; }
 }
 </style>
@@ -100,10 +112,6 @@ footer { margin-top: 64px; color: var(--muted); font-size: 0.875rem; }
         <div class="top"><span class="title">McMaster University</span><span class="date">2026 – present</span></div>
         <div class="sub">Bachelor of Engineering, Engineering I · Hamilton, ON</div>
       </li>
-      <li>
-        <div class="top"><span class="title">Southridge School</span><span class="date">2026</span></div>
-        <div class="sub">BC Dogwood Diploma · Surrey, BC</div>
-      </li>
     </ul>
   </section>
 
@@ -133,20 +141,6 @@ footer { margin-top: 64px; color: var(--muted); font-size: 0.875rem; }
       </li>
       <li>
         <div class="top"><span class="title">McMaster Dragon Boat</span><span class="date">2026 – present</span></div>
-      </li>
-      <li>
-        <div class="top"><span class="title">Harkness Student Leader &amp; English TA, Southridge School</span><span class="date">2025 – 2026</span></div>
-        <p>Ran workshops on discussion-based (Harkness) learning and gave feedback to department heads.</p>
-      </li>
-      <li>
-        <div class="top"><span class="title">Competition Trivia, Southridge School</span><span class="date">2024 – 2026</span></div>
-        <p>Starting roster for Reach for the Top and Consensus.</p>
-      </li>
-      <li>
-        <div class="top"><span class="title">Varsity Badminton, Southridge School</span><span class="date">2023 – 2026</span></div>
-      </li>
-      <li>
-        <div class="top"><span class="title">School Mascot, Southridge School</span><span class="date">2022 – 2026</span></div>
       </li>
     </ul>
   </section>
