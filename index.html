@@ -9,20 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-/* Colors live here. Change these to restyle the whole site. */
+/* Colors live here. Theme: Midnight (WordPress admin palette). */
 :root {
-  --bg: #fafafa;
-  --text: #1a1a1a;
-  --muted: #7a7a7a;
-  --rule: #e2e2e2;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #101010;
-    --text: #e6e6e6;
-    --muted: #8a8a8a;
-    --rule: #262626;
-  }
+  color-scheme: dark;
+  --bg: #25282b;
+  --text: #e8e9ea;
+  --muted: #9ca2a7;
+  --rule: #363b3f;
+  --accent: #e14d43;
 }
 
 * { box-sizing: border-box; }
@@ -34,16 +28,16 @@ body {
 }
 main { max-width: 900px; margin: 0 auto; padding: 72px 24px 64px; }
 
-a { color: inherit; text-decoration-color: var(--muted); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { text-decoration-color: var(--text); }
-a:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
+a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 
 header h1 { margin: 0; font-size: 2.75rem; font-weight: 200; letter-spacing: -0.02em; line-height: 1.1; }
 header p { margin: 10px 0 0; color: var(--muted); }
 
 nav { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 4px 24px; }
 nav a { color: var(--muted); text-decoration: none; }
-nav a:hover { color: var(--text); }
+nav a:hover { color: var(--accent); }
 
 /* Each section: heading in a left column, content on the right. */
 section {
