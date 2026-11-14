@@ -1,11 +1,10 @@
 # Personal Website
 
-A one-page portfolio hosted on GitHub Pages.
+Rocky Yu's one-page portfolio, hosted on GitHub Pages at https://rockyyu000-commits-goo.github.io.
 
 ## Files
 
 - `index.html`: the whole site, styles included.
-- `resume.pdf`: add your résumé here (linked from Contact).
 - `.nojekyll`: tells GitHub Pages to serve the files as they are.
 
 ## Editing
